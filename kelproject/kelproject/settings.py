@@ -73,11 +73,17 @@ WSGI_APPLICATION = 'kelproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES ={
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mezunplatform',
+        'USER': 'usergonullu',
+        'PASSWORD': '..Turk8875..',
+        'HOST': '52.165.159.70',
+        #'HOST':'datapare.ci6gqfcmhv3s.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
+    },
+
 }
 
 
