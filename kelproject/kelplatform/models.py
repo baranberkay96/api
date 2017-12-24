@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 
 
 
+
 class User_Manager(BaseUserManager):
     """Helps Django works with our custom user model"""
 
@@ -44,12 +45,12 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     objects = User_Manager()
     created_on = models.DateTimeField(auto_now_add=True)
-    company = models.ForeignKey('Company', on_delete=models.SET_NULL, null=True)
     confirmation_token = models.CharField(default=True, max_length=255)
     change_password_request_date =  models.DateTimeField(null=True, auto_now_add=True)
     change_password_count = models.IntegerField(default=0,null=False)
     USERNAME_FIELD='email'
     REQUIRED_FIELDS = ['name']
+
 
     def get_full_name(self):
         """Used to get user full name"""
